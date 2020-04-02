@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="104dp"
+        android:text="@string/buttonSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
+
+    <Button
+        android:id="@+id/buttonPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/buttonPressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
+
+    <Button
+        android:id="@+id/buttonHealthIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/buttonHealthIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPressure" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/inputAge"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewAge"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
+
+    <EditText
+        android:id="@+id/editTextFIO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/inputFIO"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewFIO"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFIO" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_med_round" />
+
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="300dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/textViewHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewAge"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/editTextFIO"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFIO" />
+
+    <TextView
+        android:id="@+id/textViewFIO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/textViewFIO"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

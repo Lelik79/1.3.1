@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HealthIndicatorActivity">
+
+    <TextView
+        android:id="@+id/textViewHealthIndicator"
+        android:layout_width="409dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="#4CAF50"
+        android:gravity="center_vertical"
+        android:text="@string/textViewHealthIndicator"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/inputWeight"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/inputSteps"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/editTextWeight"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
+
+    <Button
+        android:id="@+id/buttonHealthIndicatorSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="152dp"
+        android:text="@string/buttonSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSteps" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
