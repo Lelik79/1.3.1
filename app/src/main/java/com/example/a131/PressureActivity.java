@@ -20,19 +20,16 @@ public class PressureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pressure);
 
-        final EditText editTextUpPressure = (EditText) findViewById(R.id.editTextUpPressure);
-        final EditText editTextDownPressure = (EditText) findViewById(R.id.editTextDownPressure);
-        final EditText editTextPulse = (EditText) findViewById(R.id.editTextPulse);
-        final CheckBox checkBoxTachycardia = (CheckBox) findViewById(R.id.checkBoxTachycardia);
-        final EditText editTextDate = (EditText) findViewById(R.id.editTextDate);
+        final EditText editTextUpPressure = findViewById(R.id.editTextUpPressure);
+        final EditText editTextDownPressure = findViewById(R.id.editTextDownPressure);
+        final EditText editTextPulse = findViewById(R.id.editTextPulse);
+        final CheckBox checkBoxTachycardia = findViewById(R.id.checkBoxTachycardia);
+        final EditText editTextDate = findViewById(R.id.editTextDate);
 
         Button buttonPressureSave = (Button) findViewById(R.id.buttonPressureSave);
         buttonPressureSave.setOnClickListener(new View.OnClickListener() {
                                                   @Override
                                                   public void onClick(View v) {
-                                                      int age = 0;
-                                                      int maxAge = 150;
-                                                      boolean success = false;
 
                                                       if (
                                                               isCorrect(editTextUpPressure.getText().toString(), 1, 300, "Некорректное значение верхнего давления")

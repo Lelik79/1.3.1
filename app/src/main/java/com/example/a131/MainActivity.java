@@ -12,15 +12,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "Health monitoring system";
+    private static final String TAG =  MainActivity.class.getName();
+    private static final int MAX_AGE = 150;
+    int age = 0;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText editTextFIO = (EditText) findViewById(R.id.editTextFIO);
-        final EditText editTextAge = (EditText) findViewById(R.id.editTextAge);
+        final EditText editTextFIO = findViewById(R.id.editTextFIO);
+        final EditText editTextAge = findViewById(R.id.editTextAge);
 
         Log.i(TAG, "Информационное сообщение при старте программы Health monitoring system");
 
@@ -29,28 +32,26 @@ public class MainActivity extends AppCompatActivity {
                                           @Override
                                           public void onClick(View v) {
 
-
-                                              int age = 0;
-                                              int maxAge = 150;
-                                              boolean success = false;
                                               try {
                                                   age = Integer.parseInt(editTextAge.getText().toString());
-                                                  if (age > maxAge || age < 1) {
+                                                  name = editTextFIO.getText().toString();
+
+                                                  if (name.trim().length() == 0) {
+                                                      Toast.makeText(MainActivity.this, "Введите имя пациента", Toast.LENGTH_LONG).show();
+                                                                                                      }
+                                                  else if (age > MAX_AGE || age < 1 ) {
                                                       Log.e(TAG, "Введено некорректное занчение в поле ВОЗРАСТ !");
-                                                      Toast.makeText(MainActivity.this, "Введите число от 1 до " + maxAge, Toast.LENGTH_LONG).show();
+                                                      Toast.makeText(MainActivity.this, "Введите возраст пациента от 1 до " + MAX_AGE, Toast.LENGTH_LONG).show();
+
                                                   } else {
-                                                      success = true;
+                                                      Patient patient = new Patient(editTextFIO.getText().toString(), age);
+                                                      Toast.makeText(MainActivity.this, patient.toString(), Toast.LENGTH_LONG).show();
+
                                                   }
                                               } catch (Exception e) {
                                                   Log.e(TAG, "Введено некорректное занчение в поле ВОЗРАСТ !");
-                                                  Toast.makeText(MainActivity.this, "Введите число от 1 до 100", Toast.LENGTH_LONG).show();
-                                              }
-                                              if (success) {
-                                                  Patient patient = new Patient(editTextFIO.getText().toString(), age);
-                                                  Toast.makeText(MainActivity.this, patient.toString(), Toast.LENGTH_LONG).show();
-                                              } else {
-                                                  Log.e(TAG, "Введено некорректное значение на экране MainActivity ");
-                                                  editTextAge.setText("");
+                                                  Toast.makeText(MainActivity.this, "Введите имя и возраст пациента", Toast.LENGTH_LONG).show();
+
                                               }
                                           }
                                       }

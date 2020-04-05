@@ -19,8 +19,8 @@ public class HealthIndicatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_health_indicator);
 
 
-        final EditText editTextWeight = (EditText) findViewById(R.id.editTextWeight);
-        final EditText editTextSteps = (EditText) findViewById(R.id.editTextSteps);
+        final EditText editTextWeight = findViewById(R.id.editTextWeight);
+        final EditText editTextSteps = findViewById(R.id.editTextSteps);
 
         Button buttonHealthIndicatorSave = (Button) findViewById(R.id.buttonHealthIndicatorSave);
         buttonHealthIndicatorSave.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +41,7 @@ public class HealthIndicatorActivity extends AppCompatActivity {
                                                                  Toast.makeText(HealthIndicatorActivity.this, healthIndicator.toString(), Toast.LENGTH_LONG).show();
                                                              } else {
                                                                  Log.e(TAG, "Введено некорректное занчение на экране  HealthIndicatorActivity !!! ");
-                                                                 //Toast.makeText(PressureActivity.this, pressure.toString(), Toast.LENGTH_LONG).show();
-                                                                 //editTextAge.setText("");
+
                                                              }
                                                          }
                                                      }

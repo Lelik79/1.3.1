@@ -2,11 +2,11 @@ package com.example.a131;
 
 public class Pressure {
 
-    int upPressure;
-    int downPressure;
-    int pulse;
-    boolean tachycardia;
-    String date;
+    private int upPressure;
+    private int downPressure;
+    private int pulse;
+    private boolean tachycardia;
+    private String date;
 
     public Pressure(int upPressure, int downPressure, int pulse, boolean tachycardia, String date) {
         this.upPressure = upPressure;

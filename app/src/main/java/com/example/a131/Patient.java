@@ -1,8 +1,8 @@
 package com.example.a131;
 
 public class Patient {
-    String fio;
-    int age;
+    private String fio;
+    private int age;
 
     public Patient(String fio, int age) {
         this.fio = fio;

@@ -2,8 +2,8 @@ package com.example.a131;
 
 public class HealthIndicator {
 
-    double weight;
-    int steps;
+    private double weight;
+    private int steps;
 
     public HealthIndicator(double weight, int steps) {
         this.weight = weight;
